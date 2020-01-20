@@ -1,24 +1,13 @@
-Vue.component('infos', {
-
-    data: function () {
-  
-      return {
-  
+let vue_app = new Vue({
+    el:'#app',
+    data: {
         nom: "Mando",
         profession: "Chasseur de prime",
         transport: "Razorcrest",
         phraseprefere: "this is the way"
-  
-      }
-  
-    },
-  
-    template: '<span>nom: {{ nom }}</span>',
-    template: '<span>profession: {{ profession }}</span>',
-    template: '<span>transport: {{ transport }}</span>',
-    template: '<span>phraseprefere: {{ phraseprefere }}</span>'
-  
-  })
+    }
+})
+
 
 export default class Galery {
     
