@@ -13,7 +13,10 @@ Vue.component('infos', {
   
     },
   
-    template: '<span>Prénom: {{ prenom }}</span>'
+    template: '<span>nom: {{ nom }}</span>',
+    template: '<span>profession: {{ profession }}</span>',
+    template: '<span>transport: {{ transport }}</span>',
+    template: '<span>phraseprefere: {{ phraseprefere }}</span>'
   
   })
 
@@ -24,9 +27,9 @@ export default class Galery {
         let images = fetch("images.json")
         console.log(images)
 
-			this.personnageMask = document.querySelectorAll(".personnage-mask");
-			this.grosseImage = document.querySelectorAll(".grosse-image");
-            this.galleriePhoto = document.querySelectorAll(".gallerie-photo");
+			this.personnageMask = document.querySelector(".personnage-mask");
+			this.grosseImage = document.querySelector(".grosse-image");
+            this.galleriePhoto = document.querySelector(".gallerie-photo");
             
             this.imageContainer = document.createElement("img");
             this.galleriePhoto.appendChild(imageContainer)
