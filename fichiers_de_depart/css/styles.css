@@ -1,0 +1,63 @@
+body {
+    margin: 0px;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personnage-mask {
+    width: 300px;
+    overflow: hidden;
+    transition: width 0.5s;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #000;
+    border-radius: 5px;
+}
+.personnage-mask.ouvert {
+    width: 700px;
+}
+
+.personnage {
+    display: flex;
+    width: 700px;
+}
+
+.grosse-image {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    transition: filter 0.5s;
+    cursor: pointer;
+}
+.grosse-image:hover {
+    filter: brightness(1.5)
+}
+
+.infos-supplementaires {
+    padding-left: 10px;
+}
+
+.gallerie-photo img {
+    height: 75px;
+    cursor: pointer;
+    transition: filter 0.25s;
+    padding: 2px;
+}
+.gallerie-photo img:hover {
+    filter: brightness(1.5)
+}
+
+.infos {
+    height: 75px;
+}
+.infos div span.titre {
+    font-weight: bold;
+    font-size: 16px;
+}
+.infos div span.valeur {
+    font-size: 16px;
+}
