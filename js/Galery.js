@@ -13,31 +13,36 @@ export default class Galery {
     
     constructor() {
 
-        let images = fetch("images.json")
-        console.log(images)
+        let promesse_load = fetch("images.json")
+        promesse_load.then(function(response){
 
-			this.personnageMask = document.querySelector(".personnage-mask");
+            promesse_text = response.json()
+
+            promesse_text.then(function(data) {
+
+                for (image of data) {
+                    let img = document.createElement("img")
+                    img.src = image.source
+
+                    document.body.appendChild(img)
+                }
+            })
+        })
+
+
+            this.personnageMask = document.querySelector(".personnage-mask");
+            // console.log(personnageMask)
 			this.grosseImage = document.querySelector(".grosse-image");
             this.galleriePhoto = document.querySelector(".gallerie-photo");
             
-            this.imageContainer = document.createElement("img");
-            this.galleriePhoto.appendChild(imageContainer)
+            // this.imageContainer = document.createElement("img");
+            // this.galleriePhoto.appendChild(this.imageContainer)
 			
-			this.personnageMask.addEventListener("click", () => {
-				this.grosseImage.classList.add("ouvert");
+			this.grosseImage.addEventListener("click", () => {
+				this.personnageMask.classList.add("ouvert");
             })
 
         
-
-            this.image1 = document.createElement("img");
-            this.image2 = document.createElement("img");
-            this.image3 = document.createElement("img");
-            this.image4 = document.createElement("img");
-        
-            this.galleriePhoto.appendChild(image1)
-            this.galleriePhoto.appendChild(image2)
-            this.galleriePhoto.appendChild(image3)
-            this.galleriePhoto.appendChild(image4)
 
     }
 }
